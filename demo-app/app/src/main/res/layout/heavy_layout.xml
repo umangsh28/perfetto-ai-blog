@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Deliberately nested layout to make inflation expensive.
+     In production, use ConstraintLayout to flatten hierarchy. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Nesting level 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Item 1" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Item 2" />
+            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_gallery" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested A" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested B" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested C" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Item 3" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Item 4" />
+            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_camera" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested D" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested E" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nested F" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nesting level 2 — repeat the pattern -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Row 2 Item 1" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Row 2 Item 2" />
+            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_edit" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deep G" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deep H" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Row 2 Item 3" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Row 2 Item 4" />
+            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@android:drawable/ic_menu_search" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deep I" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deep J" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nesting level 3 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 1" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 2" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 3" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 4" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 5" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 6" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scroll Item 8" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
